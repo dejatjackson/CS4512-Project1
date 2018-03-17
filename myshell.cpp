@@ -17,10 +17,10 @@ int main() {
         args = split_args(command);
         //status = sh_execute(args);
 
-        if(strcmp(command, "echo\n") == 0) {
+        if(strcmp(args[0], "echo\n") == 0) {
             echo(command);
         }
-        else if(strcmp(command, "exit\n") == 0) {
+        else if(strcmp(args[0], "exit") == 0) {
             return 0;
         }
     } while(status);
@@ -43,7 +43,9 @@ char **split_args(char *command) {
     /* walk through other tokens */
     while( token != NULL ) {
         tokens[i] = token;
+        printf("%s", tokens[i]);
         i++;
+
 
         token = strtok(NULL, TOKEN_DELIM);
     }

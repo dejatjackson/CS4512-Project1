@@ -3,8 +3,8 @@
 #include "mycommands.h"
 
 
-int echo(char args[]) {
-    print_echo(args, 5);
+int echo(char command[]) {
+    print_echo(command, 5);
 }
 
 int print_echo(char args[], int c) {
