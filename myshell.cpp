@@ -17,7 +17,10 @@ int main() {
         args = split_args(command);
         //status = sh_execute(args);
 
-        if(strcmp(args[0], "echo\n") == 0) {
+        if(strcmp(args[0], "clear") == 0) {
+            clear();
+        }
+        else if(strcmp(args[0], "echo") == 0) {
             echo(command);
         }
         else if(strcmp(args[0], "exit") == 0) {

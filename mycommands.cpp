@@ -2,6 +2,9 @@
 #include <string.h>
 #include "mycommands.h"
 
+int clear() {
+    printf("\033[2J");
+}
 
 int echo(char command[]) {
     print_echo(command, 5);
