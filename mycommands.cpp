@@ -2,17 +2,27 @@
 #include <string.h>
 #include "mycommands.h"
 
+int cat(char *args[]) {
+
+}
+
 int clear() {
+    //clears terminal for Linux
     printf("\033[2J");
 }
 
-int echo(char command[]) {
-    print_echo(command, 5);
+int cp(char *args[]) {
+
 }
 
-int print_echo(char args[], int c) {
-    if (c <= sizeof(args)) {
-        printf("%c", args[c]);
-        print_echo(args, c + 1);
-    }
+int echo(char* command) {
+    printf("%s", command+5);
+}
+
+int grep(char *args[]) {
+
+}
+
+int ls() {
+
 }
