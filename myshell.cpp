@@ -37,7 +37,7 @@ int main() {
             grep(args);
         }
         else if(strcmp(args[0], "help") == 0) {
-            printf("cat [filename]\nclear\ncp [src] [dest]\necho [string]\nexit\ngrep pattern [files]\nhelp\nls [-l]\n");
+            printf("cat filename\nclear\ncp file1 file2\necho [string]\nexit\ngrep pattern file1 file2 ...\nhelp\nls [-l]\n");
         }
         else if(strcmp(args[0], "ls") == 0) {
             ls();

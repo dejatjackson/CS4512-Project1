@@ -3,7 +3,25 @@
 #include "mycommands.h"
 
 int cat(char *args[]) {
+    FILE *fptr;
+    char c;
+    // Open first file for reading
+    fptr = fopen(args[1], "r");
+    if (fptr == NULL) {
+        printf("cat: %s: No such file or directory\n", args[1]);
+        return 1;
+    }
 
+    c = fgetc(fptr);
+    while (c != EOF) {
+        printf ("%c", c);
+        c = fgetc(fptr);
+    }
+
+    fclose(fptr);
+
+    printf("\n");
+    return 0;
 }
 
 int clear() {
@@ -37,6 +55,7 @@ int cp(char *args[]) {
 
     fclose(fptr1);
     fclose(fptr2);
+    return 0;
 }
 
 int echo(char* command) {
