@@ -73,8 +73,11 @@ int ls() {
     d = opendir(".");
     if (d) {
         while ((dir = readdir(d)) != NULL) {
-            printf("%s ", dir->d_name);
+            if(strcmp(dir->d_name, ".") != 0 && strcmp(dir->d_name, "..") != 0) {
+                printf("%s ", dir->d_name);
+            }
         }
         closedir(d);
     }
+    printf("\n");
 }
