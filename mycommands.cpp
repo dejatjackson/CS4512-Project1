@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <dirent.h>
 #include "mycommands.h"
 
 int cat(char *args[]) {
@@ -14,7 +15,7 @@ int cat(char *args[]) {
 
     c = fgetc(fptr);
     while (c != EOF) {
-        printf ("%c", c);
+        printf("%c", c);
         c = fgetc(fptr);
     }
 
@@ -58,8 +59,8 @@ int cp(char *args[]) {
     return 0;
 }
 
-int echo(char* command) {
-    printf("%s", command+5);
+int echo(char *command) {
+    printf("%s", command + 5);
 }
 
 int grep(char *args[]) {
@@ -67,5 +68,13 @@ int grep(char *args[]) {
 }
 
 int ls() {
-
+    DIR *d;
+    struct dirent *dir;
+    d = opendir(".");
+    if (d) {
+        while ((dir = readdir(d)) != NULL) {
+            printf("%s ", dir->d_name);
+        }
+        closedir(d);
+    }
 }
