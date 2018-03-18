@@ -21,7 +21,6 @@ int cat(char *args[]) {
 
     fclose(fptr);
 
-    printf("\n");
     return 0;
 }
 
@@ -79,5 +78,4 @@ int ls() {
         }
         closedir(d);
     }
-    printf("\n");
 }

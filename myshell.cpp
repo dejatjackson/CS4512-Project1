@@ -9,17 +9,15 @@ char **split_args(char *command);
 int main() {
     char *command;
     char **args;
-    //int status = 1;
 
     do {
         printf("> ");
         command = read_line();
         args = split_args(command);
-        //status = sh_execute(args);
-
 
         if(strcmp(args[0], "cat") == 0) {
             cat(args);
+            printf("\n");
         }
         else if(strcmp(args[0], "clear") == 0) {
             clear();
@@ -41,6 +39,7 @@ int main() {
         }
         else if(strcmp(args[0], "ls") == 0) {
             ls();
+            printf("\n");
         }
         else {
             printf("Command not recognised, type help for valid commands\n");
@@ -68,7 +67,6 @@ char **split_args(char *command) {
         tokens[i] = token;
         //printf("%s", tokens[i]);
         i++;
-
 
         token = strtok(NULL, TOKEN_DELIM);
     }
