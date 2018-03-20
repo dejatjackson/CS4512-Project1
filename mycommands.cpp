@@ -63,7 +63,26 @@ int echo(char *command) {
 }
 
 int grep(char *args[]) {
+    FILE *fp;
+    char line[100];
+    
+    //open the file
+    fp = fopen(argv[2],"r");
 
+    //find line with string
+    while(fscanf(fp , "%[^\n]\n" , line)!=EOF)
+    {
+        if(strstr(line , argv[1]) !=NULL)
+        {
+            //print found line
+            printf("%s\n" , line);
+        }
+        else
+        {
+            continue;
+        }
+    }
+    fclose(fp);
 }
 
 int ls() {
