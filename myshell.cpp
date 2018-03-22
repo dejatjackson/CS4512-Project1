@@ -9,7 +9,7 @@ char **split_args(char *command);
 int main() {
     char *command;
     char **args;
-
+    printf("Welcome to our shell Program!\n"); 
     do {
         printf("> ");
         command = read_line();
