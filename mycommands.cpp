@@ -67,12 +67,12 @@ int grep(char *args[]) {
     char line[100];
     
     //open the file
-    fp = fopen(argv[2],"r");
+    fp = fopen(args[2],"r");
 
     //find line with string
     while(fscanf(fp , "%[^\n]\n" , line)!=EOF)
     {
-        if(strstr(line , argv[1]) !=NULL)
+        if(strstr(line , args[1]) !=NULL)
         {
             //print found line
             printf("%s\n" , line);
